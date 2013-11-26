@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int sayi, x, y, asallik, sayac = 0;
+
+	printf("Bir sayi giriniz: ");
+	scanf_s("%d", &sayi);
+
+	for (x = 2; x < sayi; x++)			//Girilen sayıdan küçük sayıları tek tek değerlendirmek için kullandım 
+
+	{
+		asallik = 1;
+		for (y = 2; y < x; y++)		//Değerlendirmeye alınan sayıların kendilerinden küçük bölenleri var mı kontrol etmek için kullandım;
+		{
+			if (x%y == 0)			//varsa döngüyü kırmak için,
+
+			{
+				asallik = 0;
+
+				break;
+			}
+
+
+		}
+
+		if (asallik == 1)			//yoksa bulup yazdırması için kullandım..
+		{
+			sayac++;
+
+			printf("%d ", x);
+		}
+	}
+	printf("\n %d sayisi icindeki asal sayi miktari: %d  ", sayi,sayac);
+	_getch();
+
+}
